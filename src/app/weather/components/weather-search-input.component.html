@@ -1,0 +1,8 @@
+<form [formGroup]="searchForm">
+  <md-input-container>
+    <input mdInput placeholder="Location" [formControl]="searchForm.controls['locationInput']" />
+    <md-hint [hidden]="(searchForm.controls['locationInput'].pristine || searchForm.controls['locationInput'].valid)">
+      Invalid Input
+    </md-hint>
+  </md-input-container>
+</form>

@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 import { Routes, RouterModule } from '@angular/router';
 
+// app
+import { SharedModule } from '../shared/shared.module'
+
 // pages
 import { WeatherDashComponent } from './pages/weather-dash.component';
 
 // components
 import { WeatherJsonDisplayComponent } from './components/weather-json-display.component';
+import { WeatherSearchInputComponent } from './components/weather-search-input.component';
 
 // state
 import { WeatherActions } from './weather.actions';
@@ -29,11 +33,13 @@ const routes: Routes = [
   imports: [
     CommonModule,
     EffectsModule.run(WeatherEffects),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
   declarations: [
     WeatherDashComponent,
-    WeatherJsonDisplayComponent
+    WeatherJsonDisplayComponent,
+    WeatherSearchInputComponent
   ],
   providers: [
     WeatherService,

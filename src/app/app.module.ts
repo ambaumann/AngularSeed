@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -18,6 +19,7 @@ export { AppState };
   ],
   imports: [
     CoreModule,
+    RouterModule.forRoot([]),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     WeatherModule

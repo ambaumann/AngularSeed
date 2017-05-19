@@ -21,7 +21,7 @@ export class WeatherRepoService {
 
   constructor(private http: Http) { }
 
-  getWeather(location): Observable<Weather> {
+  getWeather(location: string): Observable<Weather> {
     return this.http.get(this.serviceUrls.byName(location))
                     .map(this.transformData)
                     .catch(this.handleError);

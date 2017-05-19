@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http';
 
 import { APIModule } from './data-access/api.service.module';
 
+export { APIService }  from './data-access/api.service';
+
+export * from './interfaces';
+
 @NgModule({
   imports: [
     BrowserModule,

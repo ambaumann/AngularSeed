@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService } from './core/data-access/api.service';
+import { WeatherService } from './weather/weather.module';
 
 import { Weather } from './core/model';
 
@@ -14,13 +14,14 @@ export class AppComponent implements OnInit {
   weather: Weather;
   displayWeather: string;
 
-  constructor(public api: APIService) { }
+  constructor(public weatherService: WeatherService) { }
 
   ngOnInit(): void {
     // not collecting subscrion but do not yet care.
-    this.api.weather.getWeather('Las Vegas').subscribe( value => {
+    this.weatherService.weather$.subscribe(value => {
       this.weather = value;
       this.displayWeather = JSON.stringify(value, null, ' ');
     });
+    this.weatherService.loadWeatherForLocation('Las Vegas');
   }
 }

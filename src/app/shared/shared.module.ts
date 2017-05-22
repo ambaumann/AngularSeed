@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MdButtonModule,
   MdTabsModule,
@@ -10,6 +11,7 @@ import {
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MdButtonModule,
     MdTabsModule,
     MdInputModule
@@ -17,6 +19,7 @@ import {
   exports: [
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MdButtonModule,
     MdTabsModule,
     MdInputModule

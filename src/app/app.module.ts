@@ -11,11 +11,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
+import { AboutModule } from './about/about.module';
+import { ExampleModule } from './example/example.module';
 import { WeatherModule } from './weather/weather.module';
 
 import { AppState, reducer } from './reducers';
 export { AppState };
-
 
 @NgModule({
   declarations: [
@@ -27,9 +28,12 @@ export { AppState };
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([{path: '',   redirectTo: '/weather', pathMatch: 'full'}]),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    // worth noting that there modules could be async loaded from the router with a bit of tweaking.
+    AboutModule,
+    ExampleModule,
     WeatherModule
   ],
   providers: [],

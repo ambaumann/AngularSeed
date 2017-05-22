@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 import { Routes, RouterModule } from '@angular/router';
 
+
 // app
 import { SharedModule } from '../shared/shared.module'
 
@@ -26,7 +27,7 @@ export { WeatherState } from './reducers/weather.state';
 export { weatherReducer } from './reducers/weather.reducer';
 
 const routes: Routes = [
-  {path: '', component: WeatherDashComponent}
+  {path: 'weather', component: WeatherDashComponent}
 ];
 
 @NgModule({

@@ -1,2 +1,4 @@
-<app-weather-search-input></app-weather-search-input>
-<app-weather-json-display [weather]="service.weather$ | async"></app-weather-json-display>
+<div fxLayout="column" fxLayoutAlign="center center"  >
+  <app-weather-search-input flexOffset="5"></app-weather-search-input>
+  <app-weather-json-display [weather]="service.weather$ | async"></app-weather-json-display>
+</div>

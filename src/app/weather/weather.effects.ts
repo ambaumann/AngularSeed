@@ -26,7 +26,7 @@ export class WeatherEffects {
       const location = action.payload as string;
       return this.api.weather.getWeather(location)
         .map(weather =>
-          this.moduleActions.loadWeatherForLacationComplete(weather)
+          this.moduleActions.loadWeatherForLocationComplete(weather)
         )
         .catch((error: any) => Observable.of(this.moduleActions.loadWeatherForLacationError(error, location)));
     });

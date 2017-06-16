@@ -30,14 +30,14 @@ export class WeatherActions {
     };
   }
 
-  loadWeatherForLacationComplete(weather: Weather): Action {
+  loadWeatherForLocationComplete(weather: Weather): Action {
     return {
       type: WeatherActions.LOAD_WEATHER_FOR_LOCATION_COMPLETE,
       payload: weather
     };
   }
 
-  loadWeatherForLacationError(error: Response, location: string): Action {
+  loadWeatherForLocationError(error: Response, location: string): Action {
     return {
       type: WeatherActions.LOAD_WEATHER_FOR_LOCATION_ERROR,
       payload: { error: error, location: location }
